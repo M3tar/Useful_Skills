@@ -30,9 +30,10 @@ Always show the type map before producing output, and add a recommended choice w
 5 = 扩写 / 丰富（默认上限 +200 字）
 
 If the user gives only “2”, “3”, “4”, or “5”, restate the map briefly and proceed.
+If the user has NOT explicitly chosen a type, you MUST stop after the type map + your recommendation and ask a single short question to choose the type. Do NOT produce any content options yet.
 
 ## Core Workflow
-1. Identify the type (1 / 2 / 3 / 4 / 5). If unclear, ask.
+1. Identify the type (1 / 2 / 3 / 4 / 5). If unclear or not chosen, show the type map, give your recommended type + reason, then stop and ask the user to choose. Do NOT produce any output options in this step.
 2. Produce options:
    - Types 1 / 2 / 3: always 3 options.
    - Type 4: if content is long, provide 1 optimized version first; if short, provide 2-3 options.
